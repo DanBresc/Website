@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Experience in the Field </h1>
+	<img src = "static/eventideLogo.png" width = 450 height = 250>
+
+<h3>Eventide Audio & Communications Inc.</h3>
+<h4>Electrical Engineering Intern</h4>
+
+<body>
+	<p>
+		In the summer of 2019, I worked in the audio division of Eventide	Inc., a big name in the music effects industry as an Electrical	Engineering Intern. The vast majority of my work was using python to set up a completely automated Electromagnetic Interference(EMI)	testing system. The system that I created with my mentor, Don Elwell, was used to test the electromagnetic interference created by Eventide devices to ensure that they fell under the legal limits specified by the Federal Communications Commision
+		
+	</p>
+	
+	<p>
+		EMI testing can be an arduous, expensive and time consuming process
+		if done manually.  EMI testing involves measuring the
+		electromagnetic radiation given off by the Device Under Test (DUT)
+		at various angles, using an antenna.  To release a product that has
+		electronic components that give off electromagnetic radiation, one
+		has to take the product to an FCC certified test center to obtain an
+		official approval.  The key issue is, this is incredibly expensive,
+		with prices residing around two-thousand dollars for a day.  And
+		this fee is charged whether or not the product passes emissions so
+		companies resort to making do it yourself tests to see whether or
+		not the design is ready to be tested at the official test center. 
+		There are a few issues with these DIY tests that I aimed to  address
+		with my system.  The first issue is formatting and psenting the
+		test data in a readable way.  Analyzing the data is important to 
+		ensure  that the device is in accordance with the FCC standards. 
+		This can be difficult when the data from the scan is on a small
+		display on a spectrum analyzer.  The second issue is time
+		consumption. A hand conducted, full EMI scan can easily take more
+		than an hour, under the supervision of two employees.  The third
+		issue is a combination between, ease of use and consistency of test
+		parameters.  There are so many different settings on spectrum
+		analyzers that have to be configured in order to obtain usable
+		data.These parameters can be difficult to keep track of and they can
+		be frustrating to set up for each test.  My automated EMI Test
+		System completely fixes these problems entirely,using Python and
+		Raspberry Pi’s.
+		
+	</p>
+
+	<table>
+		<tr>
+		<td>
+			<p>
+				In order to address issues regarding the analysis and visualization
+				of the data obtained from the test is transferred from the spectrum
+				analyzer  to a main test computer through a TCP socket..  The data
+				is then loaded into a Microsoft Excel template, using the pywin32
+				library,  that shows the data graphically and compares it to the
+				limit lines that are provided by the FCC.  The user can look at the
+				raw data or look at a simplified one sheet summary that shows the
+				users the highest spikes, and the frequency that these spikes
+				occurred at, so that the engineer knows what design changes should 
+				be made in order to reduce the device's biggest problems.
+				
+			</p>
+		</td>
+		<td>
+			<img src = "static/EMIDiagram.png" width = 249 height = 285>
+		</td>
+		</tr>
+	</table>
+	
+	<p>
+		The automated test system can conduct full 360 degrees EMI Scans in
+		a fraction of the time it would take to test by hand.  This is
+		achieved by using raspberry pi’s to control some of the tasks that
+		would normally be done by hand.  The main test computer, the same
+		computer that takes the data into Excel, is also connected to two
+		raspberry pi’s that control a rotary table and an RF switcher
+		through TCP sockets.  Since the DUT needs to be measured at
+		different angles a robotic rotary table spins the device
+		automatically in between scans as it receives commands from the main
+		computer.  This simultaneously greatly reduces the time to scan 360
+		degrees of a DUT while also significantly improving the pcision of
+		rotation.
+		
+
+	</p>
+
+	<p>
+		With regards to the issue of ease of use, my script implements a
+		comphensive Graphical User Interface (GUI) using Python's Tkinter
+		library.  My GUI allows the user to set all of the relevant settings
+		for their scans.  This allows the user to adjust the rotational 
+		angles, input attenuation, p-amp settings, and much more. And it 
+		also allows the user to save their psets to allow for quick and 
+		easy test setup.  
+	</p>
+
+	<p>
+		This project was very complicated and it is really responsible for
+		getting me excited about Python and programming in general.  I am
+		grateful for the opportunity given to me by Don Elwell and the
+		entire Eventide team.
+		
+
+	</p>
+</body>	
+	
+{% endblock %}

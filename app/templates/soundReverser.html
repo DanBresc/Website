@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sound Reverser</h1>
+<form action = "" method = "post" novalidate>
+	{{ form.hidden_tag() }}
+	<p>
+		This records sound and replays it backward. When you press the button the program will begin to record you,immediately. After the specified recording time the program will wait for 3 seconds and than play the reversed sound back to you. It can be fun to hear words reversed and then try to prounounce them. Make sure to slowly increment your volume because it varies greatly in my experiance.
+	</p>
+	
+	<p>
+		{{ form.recordTime.label }} <br/>
+		{{ form.recordTime }} <br/>
+	</p>
+	<p>{{ form.submit() }}</p>
+
+</form>
+
+
+{% endblock %}

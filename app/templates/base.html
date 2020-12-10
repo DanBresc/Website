@@ -1,0 +1,59 @@
+<html>
+    <head>
+		{% if title %}
+			<title>{{ title }}</title>	
+		{% endif %}
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/baseStyle.css') }}">
+    </head>
+    <body>
+        
+		<div class= "header>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<div class = "header">
+		<a href = "https://www.linkedin.com/in/daniel-brescia-528405140/">Daniel Brescia</a>
+		<div class = "header-right">
+            <a href="/index">Home</a>
+			<a href="/workExperience">Work Experience</a>
+            <a href="/wordJumbler">Word Jumbler</a>
+			<a href="/caesarCipher">Caesar Cipher </a>
+			<a href="/soundReverser">Sound Reverser </a>
+			<a href="/lgl"> Logic Gates </a>
+			<a href ="/about"> About </a>
+			
+        </div>
+		</div>
+        <hr>
+		
+		<style>
+			.content
+			{
+				width: 70%;
+				border: 15px solid #ffd23f;
+				padding: 50px;
+				margin: auto;
+				background-color: lightgrey;
+				
+			}
+			body{
+				background-color: #3472a3;
+			}
+		</style>
+		
+        <div id = "content" class = "content">
+        {% block content %}
+		
+		{% endblock %}
+		
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul class=flashes>
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Caesar Cipher</h1>
+	<form action = "" method = "post" novalidate>
+		{{ form.hidden_tag() }}
+		<p>
+			This is the Caesar Cipher page. Enter a message to be decoded or encoded according to the cipher key 
+			{% if form.cipherKey.data %}
+				of {{form.cipherKey.data }}.
+			
+			{% else %}
+				that is to be selected from the dropdown.
+			{% endif %}
+		</p>
+		<p>
+			{{ form.originalMessage.label }} <br/>
+			{{ form.originalMessage(size = 32) }}<br/>
+			{% for error in form.originalMessage.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}
+			
+			{{ form.encodedMessage.label }} <br/>
+			{{ form.encodedMessage(size =32) }}<br/>
+			{% for error in form.encodedMessage.errors %}
+				<span style="color: red;">[{{ error }}]</span>
+			{% endfor %}
+			
+			{{ form.cipherKey.label }}<br>
+			{{ form.cipherKey }}
+			{{ form.cipherKey.description }}
+			
+		</p>
+		<p>{{ form.submit() }}</p>
+	</form>
+{% endblock %}

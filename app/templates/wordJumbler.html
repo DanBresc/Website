@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Word Jumbler</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+			This is the word jumbler page. Enter a set of letters and the words that can be made using these letters will be returned.  This will take a few seconds as the word jumbler looks for words.(The time the program searches for is proportional to the lenght of the word squared, Is not reccomened for words larger than 8 letters)
+			
+			**Update** I have written a new version of this program on my local machine that runs much much faster by using a more efficient algorithm and i will implement it to the website soon
+		</p>
+		
+		<p>
+            {{ form.jWord.label }}<br/>
+            {{ form.jWord(size=32) }}<br/>
+            {% for error in form.jWord.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+
+        <p>{{ form.submit() }}</p>
+		
+    </form>
+{% endblock %}

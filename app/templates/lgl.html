@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Logic Gate Module</h1>
+	
+	<p>
+		This is a Logic Gate Module that I created for download.  It includes all of the basic logic gates as well as class that handles converty strings to binary and vice versa.  The logic gates take two binary strings as inputs (with the exception of the not gate) and returns another binary string.  I hope this can be a use to some programmers.
+	</p>
+	<p>
+		*If you encounter any confusion using the script. I wrote help text for every method.  If confused just put the following into shell.
+		>>>help(logicGates)		
+	</p>
+	
+	<p>
+		Here are some example uses: <br/>
+		>>> from logicGates import LogicGates<br/>
+		>>> LG = LogicGates()<br/>
+		>>> x = "10100"<br/>
+		>>> y = "10010"<br/>
+		>>> LG.AND(x,y)<br/>
+		'10000'<br/>
+		<br/>
+		<br/>
+	
+	</P>
+	
+	<p>
+		<a href="static/logicGates.zip" download ="static/logicGates.zip">
+		<b>Click here to download</b>
+	</p>
+	
+{% endblock %}
