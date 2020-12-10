@@ -9,7 +9,7 @@ import string
 #Created Packages 
 from app import wordJumblerBackEnd as WJ
 from app import caesarCipherBackEnd as CC
-from app import soundReverserBackEnd as SR
+#from app import soundReverserBackEnd as SR
 #from app import typingTestBackEnd as TT
 
 @app.route('/')
@@ -46,7 +46,8 @@ def caesarCipher():
         flash("Encoded Message: " + encodedString)
         flash("Decoded String: " + decodedString)
     return render_template('caesarCipher.html', title = "Caesar Cipher",form = form)
-    
+ 
+''' 
 @app.route('/soundReverser', methods = ['GET','POST'])
 def soundReverser():
     form = SoundReverserForm()
@@ -59,7 +60,7 @@ def soundReverser():
         
         flash("Finished Playing Sound")
     return render_template('soundReverser.html', title = "Sound Reverser", form = form)
-    
+''' 
 @app.route('/workExperience')
 def workExperience():
     return render_template('workExperience.html', title = "My Work Experiance")
